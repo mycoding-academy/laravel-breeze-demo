@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ProfileController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Public routes
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Protected routes
+Route::middleware(['auth'])->group(function() {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/profile/edit', [ProfileController::class, 'edit'])
+        ->name('profile.edit');
+    Route::post('/profile/update', [ProfileController::class, 'update'])
+        ->name('profile.update');
+});
+
 
 require __DIR__.'/auth.php';
