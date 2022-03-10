@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ChangePasswordController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +29,11 @@ Route::middleware(['auth'])->group(function() {
         ->name('profile.edit');
     Route::post('/profile/update', [ProfileController::class, 'update'])
         ->name('profile.update');
+    Route::get('/password/change', [ChangePasswordController::class, 'create'])
+        ->name('password.change');
+    Route::post('/password/store', [ChangePasswordController::class, 'store'])
+        ->name('password.store');
+
 });
 
 
