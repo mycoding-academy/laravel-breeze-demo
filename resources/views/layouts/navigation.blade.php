@@ -86,7 +86,7 @@
                 <x-dropdown-link :href="route('password.change')">
                     {{ __('Chaneg Password') }}        
                 </x-dropdown-link>
-                
+
                 <x-dropdown-link :href="route('profile.edit')">
                     {{ __('Edit Profile') }}        
                 </x-dropdown-link>
