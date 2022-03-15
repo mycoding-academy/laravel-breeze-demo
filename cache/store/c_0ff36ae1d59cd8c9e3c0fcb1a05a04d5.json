@@ -1,0 +1,236 @@
+{
+    "name": "App\\Http\\Middleware\\TrustProxies",
+    "line": 8,
+    "short_desc": null,
+    "long_desc": null,
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Middleware",
+    "file": ".\/app\\Http\\Middleware\\TrustProxies.php",
+    "relative_file": null,
+    "hash": "4c915478c380e43a2889f66130fe95f9b90ca5f0",
+    "parent": "Illuminate\\Http\\Middleware\\TrustProxies",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "Middleware": "Illuminate\\Http\\Middleware\\TrustProxies",
+        "Request": "Illuminate\\Http\\Request"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": {
+        "proxies": {
+            "name": "proxies",
+            "line": 15,
+            "short_desc": "The trusted proxies for this application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "App\\Http\\Middleware\\array<int,string>",
+                    false
+                ],
+                [
+                    "string",
+                    false
+                ],
+                [
+                    "null",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": null,
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
+        },
+        "headers": {
+            "name": "headers",
+            "line": 22,
+            "short_desc": "The headers that should be used to detect proxies.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "int",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": 2,
+            "default": {
+                "nodeType": "Expr_BinaryOp_BitwiseOr",
+                "left": {
+                    "nodeType": "Expr_BinaryOp_BitwiseOr",
+                    "left": {
+                        "nodeType": "Expr_BinaryOp_BitwiseOr",
+                        "left": {
+                            "nodeType": "Expr_BinaryOp_BitwiseOr",
+                            "left": {
+                                "nodeType": "Expr_ClassConstFetch",
+                                "class": {
+                                    "nodeType": "Name_FullyQualified",
+                                    "parts": [
+                                        "Illuminate",
+                                        "Http",
+                                        "Request"
+                                    ],
+                                    "attributes": {
+                                        "startLine": 23,
+                                        "endLine": 23
+                                    }
+                                },
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "name": "HEADER_X_FORWARDED_FOR",
+                                    "attributes": {
+                                        "startLine": 23,
+                                        "endLine": 23
+                                    }
+                                },
+                                "attributes": {
+                                    "startLine": 23,
+                                    "endLine": 23
+                                }
+                            },
+                            "right": {
+                                "nodeType": "Expr_ClassConstFetch",
+                                "class": {
+                                    "nodeType": "Name_FullyQualified",
+                                    "parts": [
+                                        "Illuminate",
+                                        "Http",
+                                        "Request"
+                                    ],
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "endLine": 24
+                                    }
+                                },
+                                "name": {
+                                    "nodeType": "Identifier",
+                                    "name": "HEADER_X_FORWARDED_HOST",
+                                    "attributes": {
+                                        "startLine": 24,
+                                        "endLine": 24
+                                    }
+                                },
+                                "attributes": {
+                                    "startLine": 24,
+                                    "endLine": 24
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 23,
+                                "endLine": 24
+                            }
+                        },
+                        "right": {
+                            "nodeType": "Expr_ClassConstFetch",
+                            "class": {
+                                "nodeType": "Name_FullyQualified",
+                                "parts": [
+                                    "Illuminate",
+                                    "Http",
+                                    "Request"
+                                ],
+                                "attributes": {
+                                    "startLine": 25,
+                                    "endLine": 25
+                                }
+                            },
+                            "name": {
+                                "nodeType": "Identifier",
+                                "name": "HEADER_X_FORWARDED_PORT",
+                                "attributes": {
+                                    "startLine": 25,
+                                    "endLine": 25
+                                }
+                            },
+                            "attributes": {
+                                "startLine": 25,
+                                "endLine": 25
+                            }
+                        },
+                        "attributes": {
+                            "startLine": 23,
+                            "endLine": 25
+                        }
+                    },
+                    "right": {
+                        "nodeType": "Expr_ClassConstFetch",
+                        "class": {
+                            "nodeType": "Name_FullyQualified",
+                            "parts": [
+                                "Illuminate",
+                                "Http",
+                                "Request"
+                            ],
+                            "attributes": {
+                                "startLine": 26,
+                                "endLine": 26
+                            }
+                        },
+                        "name": {
+                            "nodeType": "Identifier",
+                            "name": "HEADER_X_FORWARDED_PROTO",
+                            "attributes": {
+                                "startLine": 26,
+                                "endLine": 26
+                            }
+                        },
+                        "attributes": {
+                            "startLine": 26,
+                            "endLine": 26
+                        }
+                    },
+                    "attributes": {
+                        "startLine": 23,
+                        "endLine": 26
+                    }
+                },
+                "right": {
+                    "nodeType": "Expr_ClassConstFetch",
+                    "class": {
+                        "nodeType": "Name_FullyQualified",
+                        "parts": [
+                            "Illuminate",
+                            "Http",
+                            "Request"
+                        ],
+                        "attributes": {
+                            "startLine": 27,
+                            "endLine": 27
+                        }
+                    },
+                    "name": {
+                        "nodeType": "Identifier",
+                        "name": "HEADER_X_FORWARDED_AWS_ELB",
+                        "attributes": {
+                            "startLine": 27,
+                            "endLine": 27
+                        }
+                    },
+                    "attributes": {
+                        "startLine": 27,
+                        "endLine": 27
+                    }
+                },
+                "attributes": {
+                    "startLine": 23,
+                    "endLine": 27
+                }
+            },
+            "errors": [],
+            "is_read_only": false,
+            "is_write_only": false
+        }
+    },
+    "methods": [],
+    "constants": []
+}

@@ -1,0 +1,142 @@
+{
+    "name": "App\\Http\\Requests\\Auth\\LoginRequest",
+    "line": 12,
+    "short_desc": null,
+    "long_desc": null,
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Requests\\Auth",
+    "file": ".\/app\\Http\\Requests\\Auth\\LoginRequest.php",
+    "relative_file": null,
+    "hash": "f3de08d5a514553417ebc6137811709a13ce9834",
+    "parent": "Illuminate\\Foundation\\Http\\FormRequest",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "Lockout": "Illuminate\\Auth\\Events\\Lockout",
+        "FormRequest": "Illuminate\\Foundation\\Http\\FormRequest",
+        "Auth": "Illuminate\\Support\\Facades\\Auth",
+        "RateLimiter": "Illuminate\\Support\\Facades\\RateLimiter",
+        "Str": "Illuminate\\Support\\Str",
+        "ValidationException": "Illuminate\\Validation\\ValidationException"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "authorize": {
+            "name": "authorize",
+            "line": 19,
+            "short_desc": "Determine if the user is authorized to make this request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "bool",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "rules": {
+            "name": "rules",
+            "line": 29,
+            "short_desc": "Get the validation rules that apply to the request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "array",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "authenticate": {
+            "name": "authenticate",
+            "line": 44,
+            "short_desc": "Attempt to authenticate the request's credentials.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Illuminate\\Validation\\ValidationException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "ensureIsNotRateLimited": {
+            "name": "ensureIsNotRateLimited",
+            "line": 66,
+            "short_desc": "Ensure the login request is not rate limited.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [
+                [
+                    "\\Illuminate\\Validation\\ValidationException",
+                    ""
+                ]
+            ],
+            "errors": [],
+            "parameters": []
+        },
+        "throttleKey": {
+            "name": "throttleKey",
+            "line": 89,
+            "short_desc": "Get the rate limiting throttle key for the request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "string",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

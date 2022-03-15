@@ -1,0 +1,47 @@
+{
+    "name": "App\\View\\Components\\GuestLayout",
+    "line": 7,
+    "short_desc": null,
+    "long_desc": null,
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\View\\Components",
+    "file": ".\/app\\View\\Components\\GuestLayout.php",
+    "relative_file": null,
+    "hash": "9ee2e50f45312f2e2b451415f800b26f926299eb",
+    "parent": "Illuminate\\View\\Component",
+    "modifiers": 0,
+    "is_trait": false,
+    "is_interface": false,
+    "is_read_only": false,
+    "aliases": {
+        "Component": "Illuminate\\View\\Component"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "render": {
+            "name": "render",
+            "line": 14,
+            "short_desc": "Get the view \/ contents that represents the component.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\View\\View",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "see": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}
