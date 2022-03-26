@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +34,8 @@ Route::middleware(['auth'])->group(function() {
         ->name('password.change');
     Route::post('/password/store', [ChangePasswordController::class, 'store'])
         ->name('password.store');
-
+    Route::get('/users/export/', [UsersController::class, 'export'])
+        ->name('users.export');
 });
 
 
