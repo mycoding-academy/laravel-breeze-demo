@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Spatie\Ray;
 
 class ProfileController extends Controller
 {
@@ -15,7 +14,6 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        ray('My first call');
         return view('profile.edit', ['profile' => auth()->user()]);
     }
 
