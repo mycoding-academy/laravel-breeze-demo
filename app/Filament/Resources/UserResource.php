@@ -10,7 +10,9 @@ use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
+use Illuminate\Database\Eloquent\Builder;
 use Livewire\Component;
+use Illuminate\Support\Facades\Hash;
 use Filament\Forms\Components\BelongsToManyMultiSelect;
 
 class UserResource extends Resource
@@ -18,6 +20,8 @@ class UserResource extends Resource
     protected static ?string $model = User::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-collection';
+
+    protected static ?string $recordTitleAttribute = 'name';
 
     public static function form(Form $form): Form
     {
@@ -35,9 +39,14 @@ class UserResource extends Resource
                     ->maxLength(255),
                 Forms\Components\TextInput::make('password')
                     ->password()
-                    ->required()
+                    ->nullable()
+                    ->required(fn (Component $livewire): bool => $livewire instanceof Pages\CreateUser)
                     ->maxLength(255)
-                    ->hidden(fn (Component $livewire): bool => $livewire instanceof Pages\EditUser),
+                    ->same('passwordConfirmation')
+                    ->dehydrateStateUsing(fn ($state) => !empty($state) ? Hash::make($state) : ""),
+                Forms\Components\TextInput::make('passwordConfirmation')
+                    ->password()
+                    ->required(fn (Component $livewire): bool => $livewire instanceof Pages\CreateUser),
                 BelongsToManyMultiSelect::make('roles')->relationship('roles', 'name')
             ]);
     }
@@ -46,18 +55,24 @@ class UserResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('first_name'),
-                Tables\Columns\TextColumn::make('last_name'),
-                Tables\Columns\TextColumn::make('email'),
+                Tables\Columns\TextColumn::make('first_name')
+                    ->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('last_name')
+                    ->searchable()->sortable(),
+                Tables\Columns\TextColumn::make('email')
+                    ->searchable()->sortable(),
                 Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime(),
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->sortable()
                     ->dateTime(),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime(),
+                    ->dateTime()
+                    ->hidden(fn (Component $livewire): bool => $livewire instanceof Pages\ListUsers),  
             ])
             ->filters([
-                //
+                Tables\Filters\Filter::make('verified')
+                ->query(fn (Builder $query): Builder => $query->whereNotNull('email_verified_at')),
             ]);
     }
 
@@ -76,4 +91,10 @@ class UserResource extends Resource
             'edit' => Pages\EditUser::route('/{record}/edit'),
         ];
     }
+
+    public static function getGloballySearchableAttributes(): array
+    {
+        return ['first_name', 'last_name'];
+    }
+
 }
